@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Horário de Emissão</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #horario { font-size: 20px; margin: 20px; }
+    </style>
+</head>
+<body>
+    <div id="horario"></div>
+    <script>
+        function Dateformat(data) {
+            const dia = String(data.getDate()).padStart(2, '0'); // Dia com dois dígitos
+            const mes = String(data.getMonth() + 1).padStart(2, '0'); // Mês com dois dígitos (0-11)
+            const horas = String(data.getHours()).padStart(2, '0'); // Horas com dois dígitos
+            const minutos = String(data.getMinutes()).padStart(2, '0'); // Minutos com dois dígitos
+            const segundos = String(data.getSeconds()).padStart(2, '0'); // Segundos com dois dígitos
+            
+            return `${horas}:${minutos}:${segundos} (${dia}/${mes})`;
+        }
+
+
+        document.getElementById("horario").innerHTML = "Horário de Emissão: " + Dateformat(new Date());
+    </script>
+</body>
+</html>
